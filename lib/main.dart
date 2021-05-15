@@ -3,12 +3,15 @@ import 'package:flutter/widgets.dart';
 
 main() => runApp(QuestionApp());
 
-@override
-class QuestionApp extends StatelessWidget {
+class QuestionAppState extends State<QuestionApp> {
+  var selectedQuestion = 0;
+
   void answer() {
-    print("question answered 1");
+    setState(() => {selectedQuestion++});
+    print(selectedQuestion);
   }
 
+  @override
   Widget build(BuildContext context) {
     final questions = [
       "What is your favorite color?",
@@ -22,19 +25,19 @@ class QuestionApp extends StatelessWidget {
         ),
         body: Column(
           children: [
-            Text(questions[0]),
+            Text(questions[selectedQuestion]),
             ElevatedButton(onPressed: answer, child: Text("Answer 1")),
-            ElevatedButton(
-                onPressed: () {
-                  print("question answered 2");
-                },
-                child: Text("Answer 2")),
-            ElevatedButton(
-                onPressed: () => print("question answered 3"),
-                child: Text("Answer 3")),
+            ElevatedButton(onPressed: answer, child: Text("Answer 2")),
+            ElevatedButton(onPressed: answer, child: Text("Answer 3")),
           ],
         ),
       ),
     );
+  }
+}
+
+class QuestionApp extends StatefulWidget {
+  QuestionAppState createState() {
+    return QuestionAppState();
   }
 }
