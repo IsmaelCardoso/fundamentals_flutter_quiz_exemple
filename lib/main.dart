@@ -53,7 +53,11 @@ class _QuestionAppState extends State<QuestionApp> {
                       .toList(),
                 ],
               )
-            : null,
+            : Center(
+                child: Text(
+                "Congratulations!!!",
+                style: TextStyle(fontSize: 28),
+              )),
       ),
     );
   }
