@@ -1,15 +1,29 @@
 import 'package:flutter/material.dart';
 
 class Result extends StatelessWidget {
-  final String text;
+  final int score;
 
-  Result(this.text);
+  Result({
+    @required this.score,
+  });
+
+  String get resultScore {
+    if (score < 8) {
+      return "Congratulations!";
+    } else if (score < 12) {
+      return "You are good!";
+    } else if (score < 16) {
+      return "Impressive!!!";
+    } else {
+      return "You are a Jedi!";
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Center(
         child: Text(
-      text,
+      resultScore,
       style: TextStyle(fontSize: 28),
     ));
   }

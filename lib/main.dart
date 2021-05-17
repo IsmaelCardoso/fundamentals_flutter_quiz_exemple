@@ -67,7 +67,7 @@ class _QuestionAppState extends State<QuestionApp> {
                 selectedQuestion: _selectedQuestion,
                 answerProp: _answer,
               )
-            : Result("Congratulations!!!"),
+            : Result(score: _totalScore),
       ),
     );
   }
