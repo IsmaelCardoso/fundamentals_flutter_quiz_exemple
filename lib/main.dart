@@ -11,15 +11,30 @@ class _QuestionAppState extends State<QuestionApp> {
   final _questions = const [
     {
       "text": "What is your favorite color?",
-      "answer": ["Black", "Red", "Green", "White"],
+      "answer": [
+        {"text": "Black", "score": 10},
+        {"text": "Red", "score": 5},
+        {"text": "Green", "score": 3},
+        {"text": "White", "score": 1},
+      ],
     },
     {
       "text": "What is your favorite animal?",
-      "answer": ["Coelho", "Cobra", "Elefante", "Leão"],
+      "answer": [
+        {"text": "Coelho", "score": 10},
+        {"text": "Cobra", "score": 5},
+        {"text": "Elefante", "score": 3},
+        {"text": "Leão", "score": 1},
+      ],
     },
     {
       "text": "What is your favorite teacher?",
-      "answer": ["Maria", "Jhon", "Léo", "Petter"],
+      "answer": [
+        {"text": "Maria", "score": 10},
+        {"text": "Jhon", "score": 5},
+        {"text": "Léo", "score": 3},
+        {"text": "Petter", "score": 1},
+      ],
     }
   ];
 
