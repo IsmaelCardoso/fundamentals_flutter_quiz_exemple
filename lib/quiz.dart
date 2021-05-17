@@ -7,7 +7,7 @@ class Quiz extends StatelessWidget {
   final bool haveQuestionSelected;
   final List<Map<String, Object>> questions;
   final int selectedQuestion;
-  final void Function() answerProp;
+  final void Function(int) answerProp;
 
   Quiz({
     @required this.haveQuestionSelected,
@@ -25,7 +25,8 @@ class Quiz extends StatelessWidget {
       children: [
         Question(questions[selectedQuestion]["text"]),
         ...answerTexts
-            .map((answer) => Answer(answer["text"], answerProp))
+            .map((answer) =>
+                Answer(answer["text"], () => answerProp(answer["score"])))
             .toList(),
       ],
     );
