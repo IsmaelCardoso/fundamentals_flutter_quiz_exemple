@@ -50,7 +50,13 @@ class _QuestionAppState extends State<QuestionApp> {
             _totalScore += score,
           });
     }
-    print(_totalScore);
+  }
+
+  void _restartQuiz() {
+    setState(() => {
+          _selectedQuestion = 0,
+          _totalScore = 0,
+        });
   }
 
   @override
@@ -67,7 +73,7 @@ class _QuestionAppState extends State<QuestionApp> {
                 selectedQuestion: _selectedQuestion,
                 answerProp: _answer,
               )
-            : Result(score: _totalScore),
+            : Result(score: _totalScore, restartQuiz: _restartQuiz),
       ),
     );
   }
